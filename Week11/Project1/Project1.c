@@ -1,9 +1,21 @@
-# include <stdio.h>
+﻿# include <stdio.h>
 
 int main() {
-	printf("I like C programming\n");
-	printf("My name is Donghyun Kim\n");
-	printf("I'm university of Seoul student\n")
-	printf("Hello, world!");
-	return 0;
+	char str[100];
+	int space = 0;
+	printf("영문 문장을 입력하십시오: ");
+	if (fgets(str, sizeof(str), stdin) == NULL) {
+		return 1;
+	}
+	str[strcspn(str, "\n")] = '\0';
+	for (char* p = str; *p != '\0'; p++) {
+		if (*p >= 'a' && *p <= 'z') {
+			*p = *p - 32;
+		}
+		if (*p == ' ') {
+			space++;
+		}
+	}
+	printf("대문자 : %s\n", str);
+	printf("글자 수 (공백 제외) : %lu\n", strlen(str) - space);
 }
