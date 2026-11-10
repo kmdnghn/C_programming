@@ -1,7 +1,8 @@
 # include <stdio.h>
 
 int main() {
-	printf("Hello, world!\n");
-	printf("My name is Donghyun Kim");
+	printf("I like C programming\n");
+	printf("My name is Donghyun Kim\n");
+	printf("I'm university of Seoul student\n");
 	return 0;
 }
