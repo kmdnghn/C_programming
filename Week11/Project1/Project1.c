@@ -9,13 +9,13 @@ int main() {
 	}
 	str[strcspn(str, "\n")] = '\0';
 	for (char* p = str; *p != '\0'; p++) {
-		if (*p >= 'a' && *p <= 'z') {
-			*p = *p - 32;
+		if (*p >= 'A' && *p <= 'Z') {
+			*p = *p + 32;
 		}
 		if (*p == ' ') {
 			space++;
 		}
 	}
-	printf("대문자 : %s\n", str);
+	printf("소문자 : %s\n", str);
 	printf("글자 수 (공백 제외) : %lu\n", strlen(str) - space);
 }
